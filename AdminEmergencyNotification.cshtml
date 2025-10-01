@@ -1,0 +1,57 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model AIEmergencyNavigation.Models.EmergencyReports
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+            color: #333;
+        }
+        .container {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 8px rgba(0,0,0,0.05);
+        }
+        .title {
+            font-size: 22px;
+            color: #c9302c;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .info {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .info strong {
+            color: #007bff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">🚨 New Emergency Report Submitted</div>
+        <div class="info">
+            <p><strong>Title:</strong> @Model.Title</p>
+            <p><strong>Location:</strong> @Model.Location</p>
+            <p><strong>Emergency Type:</strong> @Model.EmergencyType</p>
+            <p><strong>Reported By:</strong> @Model.UserId</p>
+            <p><strong>Time:</strong> @Model.ReportedAt.ToString("f")</p>
+            <p><strong>Status:</strong> @Model.Status</p>
+            <p><strong>Responder Type:</strong> @Model.ResponderType</p>
+        </div>
+        <hr />
+        <p style="font-size:14px;">Please <strong>login to the admin panel</strong> to review this report.</p>
+    </div>
+</body>
+</html>
